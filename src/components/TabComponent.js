@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react'
-import {Button} from 'reactstrap'
+import {Button, Col, Row} from 'reactstrap'
 import List from './List'
 
 
@@ -15,12 +15,40 @@ const TabComponent = ()=> {
 
   return (
     <div>
-        <Button onClick={()=>{setActiveTab(1)}}><img src=''></img> Afad</Button>
-        <Button onClick={()=>{setActiveTab(2)}}>Kandilli</Button>
-        <div className={`logo ${activeTab===1?"bgAfad":"bgKandilli"}`} ></div>
-        <List  activeTab={activeTab}></List>
+      <Row className="w-100">
+        <Col sm="6">
+          <Button
+            className="w-100"
+            onClick={() => {
+              setActiveTab(1);
+            }}
+          >
+            <img src=""></img> Afad
+          </Button>
+        </Col>
+        <Col sm="6">
+          <Button
+            className="w-100"
+            onClick={() => {
+              setActiveTab(2);
+            }}
+          >
+            Kandilli
+          </Button>
+        </Col>
+      </Row>
+      <Row>
+        <Col sm="4"></Col>
+        <Col sm="4">
+          <div
+            className={`logo ${activeTab === 1 ? "bgAfad" : "bgKandilli"}`}
+          ></div>
+        </Col>
+        <Col sm="4"></Col>
+      </Row>
+      <List activeTab={activeTab}></List>
     </div>
-  )
+  );
 }
 
 export default TabComponent;
