@@ -8,7 +8,7 @@ function NotFound() {
     <div className='text-center center' bordered>
         <h1>Ooops!</h1>
         <h2>404-Page Not Found!</h2>
-        <Button onClick={()=>navigate("/")}>Anasayfaya Git!</Button>
+        <Button onClick={()=>navigate("/")}>Back To Home Page!</Button>
     </div>
   )
 }

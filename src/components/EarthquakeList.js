@@ -1,22 +1,24 @@
 import React,{useState,useEffect} from 'react'
-import {useNavigate} from 'react-router-dom'
+import {useNavigate,useLocation,useParams} from 'react-router-dom'
 import {Table,Row,Col} from 'reactstrap'
 
 
-function List({activeTab}) {
+function EarthquakeList() {
+  const location = useLocation();
+  const {siteType} = location.state
     const navigate = useNavigate()
     const [data,setData]=useState([])
     const getData = () =>{
-      fetch(`https://localhost:44374/api/Earthquakes?SiteType=${activeTab}`)
+
+      fetch(`https://localhost:44374/api/Earthquakes?SiteType=${siteType}`)
       .then(response=>response.json())
       .then(d=>setData(d))
       console.log(data) 
   }
   
   useEffect(() => {
-    console.log("list:" + activeTab)
     getData();
-  }, [activeTab]);
+  }, [siteType]);
 
   const navigateToMap = (latitude, longitude) => {
     navigate("map", { state: { latitude, longitude } });
@@ -54,4 +56,4 @@ function List({activeTab}) {
   )
 }
 
-export default List
+export default EarthquakeList
