@@ -19,7 +19,6 @@ function EarthquakeList() {
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setEarthquakes(data.earthquakes);
         setCurrentPage(currentPage);
         setTotalPage(data.totalPage);
@@ -32,12 +31,12 @@ function EarthquakeList() {
   }, [siteType, currentPage]);
 
   const navigateToMap = (latitude, longitude) => {
-    navigate("map", { state: { latitude, longitude } });
+    navigate("/map", { state: { latitude, longitude } });
   };
 
-  const getColorBySize = (size) => {
-    if (size < 3) return "safe";
-    else if (size >= 3 && size <= 4) return "warning";
+  const getColorBySize = (magnitude) => {
+    if (magnitude < 3) return "safe";
+    else if (magnitude >= 3 && magnitude <= 4) return "warning";
     else return "danger";
   };
 
@@ -46,13 +45,13 @@ function EarthquakeList() {
       <Table bordered borderless hover responsive striped>
         <thead>
           <tr>
-            <th>Date</th>
-            <th>Latitude</th>
-            <th>Longitude</th>
-            <th>Depth</th>
-            <th>Type</th>
-            <th>Size</th>
-            <th>Location</th>
+            <th style={{width:"20%"}}>Date</th>
+            <th style={{width:"8%"}}>Latitude</th>
+            <th style={{width:"8%"}}>Longitude</th>
+            <th style={{width:"8%"}}>Depth</th>
+            <th style={{width:"8%"}}>Type</th>
+            <th style={{width:"8%"}}>Magnitude</th>
+            <th style={{width:"40%"}}>Location</th>
           </tr>
         </thead>
         <tbody>
@@ -66,7 +65,7 @@ function EarthquakeList() {
               <td>{item.longitude}</td>
               <td>{item.depth}</td>
               <td>{item.type}</td>
-              <td className={getColorBySize(item.size)}>{item.size}</td>
+              <td className={getColorBySize(item.magnitude)}>{item.magnitude}</td>
               <td className="text-start">{item.location}</td>
             </tr>
           ))}

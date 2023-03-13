@@ -45,7 +45,11 @@ function Navi() {
                 <DropdownItem ><NavLink className="nav-link" to="/earthquakes" state={{siteType:2,currentPage:1}}>Kandilli</NavLink></DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
+            <NavItem>
+              <NavLink className="nav-link" to="/map" state={{}}>Map</NavLink>
+            </NavItem>
           </Nav>
+          
           <Form>
             <Row className="row-cols-lg-auto g-3 align-items-center">
               <Col>

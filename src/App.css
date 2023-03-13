@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+*{
+    font-family: 'Open Sans', sans-serif;
+}
+.layout{
+  background-color: rgb(255, 255, 255,0.9) !important;
+  height: 100vh;
+}
+
 .bgAfad{
   background-image: url('./images/bgAfad.png');
   background-repeat: no-repeat;
@@ -25,12 +35,15 @@
 .safe{
   background-color: #2cba00!important;
   color: white!important;
+  font-weight: bold!important;
 }
 .warning{
   background-color: #fff400!important;
   color: #413543!important;
+  font-weight: bold!important;
 }
 .danger{
   background-color: #ff0000!important;
-  color: #413543!important;
+  color: white!important;
+  font-weight: bold!important;
 }
