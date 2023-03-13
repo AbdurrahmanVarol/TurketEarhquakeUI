@@ -41,8 +41,8 @@ function Navi() {
                 Earthquakes
               </DropdownToggle>
               <DropdownMenu end>
-                <DropdownItem > <NavLink className="nav-link" to="/earthquakes" state={{siteType:1}}>Afad</NavLink></DropdownItem>
-                <DropdownItem ><NavLink className="nav-link" to="/earthquakes" state={{siteType:2}}>Kandilli</NavLink></DropdownItem>
+                <DropdownItem > <NavLink className="nav-link" to="/earthquakes" state={{siteType:1,currentPage:1}}>Afad</NavLink></DropdownItem>
+                <DropdownItem ><NavLink className="nav-link" to="/earthquakes" state={{siteType:2,currentPage:1}}>Kandilli</NavLink></DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
           </Nav>

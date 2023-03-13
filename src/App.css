@@ -21,3 +21,16 @@
   height: 100vh;
   width: 100%;
 }
+
+.safe{
+  background-color: #2cba00!important;
+  color: white!important;
+}
+.warning{
+  background-color: #fff400!important;
+  color: #413543!important;
+}
+.danger{
+  background-color: #ff0000!important;
+  color: #413543!important;
+}
