@@ -1,11 +1,10 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { Pagination, PaginationItem, PaginationLink } from "reactstrap";
+import {  Pagination, PaginationItem, PaginationLink } from "reactstrap";
 import MyContext from "../contexts/MyContext";
 
 function PaginationComponent() {
-  const { currentPage, siteType, totalPage, setTotalPage } =
-    useContext(MyContext);
+  const { currentPage, siteType, totalPage, setTotalPage } = useContext(MyContext);
 
   const [pages, setPages] = useState([]);
 
@@ -16,7 +15,7 @@ function PaginationComponent() {
     }
   }, [totalPage]);
   return (
-    <div>
+    <div>     
       <Pagination>
         <PaginationItem>
           <Link

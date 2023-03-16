@@ -39,11 +39,11 @@ function MapComponent() {
     }
     else{
       setMarkers([])
-      fetch(`https://localhost:44374/api/Earthquakes?SiteType=1`)
+      fetch(`https://localhost:44374/api/Earthquakes?SiteType=2`)
         .then((response) => response.json())
         .then((data) => {
           data.map(d=>{
-            setMarkers((prev) =>[...prev,{latitude:d.latitude,longitude:d.longitude,magnitude:d.magnitude}])
+            setMarkers((prev) =>[...prev,{latitude:d.latitude,longitude:d.longitude,magnitude:d.magnitude,location:d.location,date:d.date}])
         })          
         });        
     }
@@ -70,7 +70,11 @@ function MapComponent() {
         {markers.map((marker,index) => (
           <Marker key={index} position={[marker.latitude,marker.longitude]} icon={getIconByMagnitude(marker.magnitude)}>
             <Popup>
-            Magnitude: {` ${marker.magnitude}`}
+            Date: {` ${marker.date}`}<br/>
+            Latitude: {` ${marker.latitude}`}<br/>
+            Longitude: {` ${marker.longitude}`}<br/>
+            Magnitude: {` ${marker.magnitude}`}<br/>
+            Location: {` ${marker.location}`}
             </Popup>
           </Marker>
         ))}

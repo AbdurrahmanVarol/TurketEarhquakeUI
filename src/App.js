@@ -7,7 +7,6 @@ import NotFound from './components/NotFound';
 import DefaultLayout from './layouts/DefaultLayout';
 import List from './components/EarthquakeList';
 import { MyContextProvider } from './contexts/MyContext';
-import PaginationComponent from './components/PaginationComponent';
 
 
 function App() {
