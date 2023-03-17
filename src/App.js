@@ -11,7 +11,7 @@ import { MyContextProvider } from './contexts/MyContext';
 
 function App() {
   return (
-    <div className="container">
+    <div>
       <MyContextProvider>
         <BrowserRouter>        
           <Routes>

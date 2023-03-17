@@ -1,8 +1,15 @@
 import React from 'react'
-function Home() {
+import NewsCart from './NewsCard';
+import { news } from '../data/news';
+function Home() { 
   return (
-    <div className='text-center'>
-      <h1>Home Page</h1>
+    <div>
+      <h1>News&Articles</h1>
+      {
+        news.map(n =>(
+          <NewsCart news={n}></NewsCart>
+        ))
+      }
     </div>
   );
 }
